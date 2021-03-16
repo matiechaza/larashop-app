@@ -30,9 +30,6 @@ jobs:
           php artisan key:generate
           chmod -R 777 storage bootstrap/cache
 
-      - name: Run yarn
-        run: yarn && yarn dev
-
       - name: Run tests
         run: ./vendor/bin/phpunit
         env:
