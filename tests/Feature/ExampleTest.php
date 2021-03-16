@@ -9,7 +9,7 @@ use Tests\TestCase;
 class ExampleTest extends TestCase
 {
     use WithoutMiddleware;
-    
+
     /**
      * A basic test example.
      *
