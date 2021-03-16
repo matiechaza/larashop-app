@@ -63,6 +63,6 @@
         ],
         "check-styles": "vendor/bin/php-cs-fixer fix --dry-run --stop-on-violation --verbose --show-progress=estimating",
         "apply-styles": "vendor/bin/php-cs-fixer fix --verbose --show-progress=estimating",
-        "phpstan": "vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G"
+        "analyse": "vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G"
     }
 }
