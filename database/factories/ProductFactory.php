@@ -27,7 +27,7 @@ class ProductFactory extends Factory
             'price' => rand(1, 100),
             'sku' => 'prueba',
             'slug' => 'prueba',
-            'stock' => 1
+            'stock' => 1,
         ];
     }
 }
