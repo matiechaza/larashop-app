@@ -34,7 +34,7 @@ final class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        //CRUD: Create, Read, Update, Delete
+        //
     }
 
     public function update(Request $request, Product $product)
