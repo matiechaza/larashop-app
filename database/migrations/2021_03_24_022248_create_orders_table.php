@@ -19,9 +19,6 @@ final class CreateOrdersTable extends Migration
                 Order::STATUS_CANCELED,
             ])->default(Order::STATUS_OPEN);
             $table->foreignId('cart_id')->constrained();
-            $table->foreignId('billing_id')->constrained();
-            $table->foreignId('shipping_id')->constrained();
-            $table->foreignId('payment_id')->constrained();
             $table->decimal('total');
             $table->text('notes')->nullable();
 
