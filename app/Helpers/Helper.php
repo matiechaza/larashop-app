@@ -40,7 +40,7 @@ final class Helper
             'pageHeader' => true,
             'contentLayout' => 'default',
             'blankPage' => false,
-            'defaultLanguage'=>'en',
+            'defaultLanguage' => 'en',
             'direction' => env('MIX_CONTENT_DIRECTION', 'ltr'),
         ];
 
@@ -49,24 +49,24 @@ final class Helper
 
         // All options available in the template
         $allOptions = [
-            'mainLayoutType' => array('vertical', 'horizontal'),
-            'theme' => array('light' => 'light', 'dark' => 'dark-layout', 'bordered' => 'bordered-layout', 'semi-dark' => 'semi-dark-layout'),
-            'sidebarCollapsed' => array(true, false),
-            'showMenu' => array(true, false),
-            'layoutWidth' => array('full', 'boxed'),
-            'navbarColor' => array('bg-primary', 'bg-info', 'bg-warning', 'bg-success', 'bg-danger', 'bg-dark'),
-            'horizontalMenuType' => array('floating' => 'navbar-floating', 'static' => 'navbar-static', 'sticky' => 'navbar-sticky'),
-            'horizontalMenuClass' => array('static' => '', 'sticky' => 'fixed-top', 'floating' => 'floating-nav'),
-            'verticalMenuNavbarType' => array('floating' => 'navbar-floating', 'static' => 'navbar-static', 'sticky' => 'navbar-sticky', 'hidden' => 'navbar-hidden'),
-            'navbarClass' => array('floating' => 'floating-nav', 'static' => 'navbar-static-top', 'sticky' => 'fixed-top', 'hidden' => 'd-none'),
-            'footerType' => array('static' => 'footer-static', 'sticky' => 'footer-fixed', 'hidden' => 'footer-hidden'),
-            'pageHeader' => array(true, false),
-            'contentLayout' => array('default', 'content-left-sidebar', 'content-right-sidebar', 'content-detached-left-sidebar', 'content-detached-right-sidebar'),
-            'blankPage' => array(false, true),
-            'sidebarPositionClass' => array('content-left-sidebar' => 'sidebar-left', 'content-right-sidebar' => 'sidebar-right', 'content-detached-left-sidebar' => 'sidebar-detached sidebar-left', 'content-detached-right-sidebar' => 'sidebar-detached sidebar-right', 'default' => 'default-sidebar-position'),
-            'contentsidebarClass' => array('content-left-sidebar' => 'content-right', 'content-right-sidebar' => 'content-left', 'content-detached-left-sidebar' => 'content-detached content-right', 'content-detached-right-sidebar' => 'content-detached content-left', 'default' => 'default-sidebar'),
-            'defaultLanguage'=>array('en'=>'en','fr'=>'fr','de'=>'de','pt'=>'pt'),
-            'direction' => array('ltr', 'rtl'),
+            'mainLayoutType' => ['vertical', 'horizontal'],
+            'theme' => ['light' => 'light', 'dark' => 'dark-layout', 'bordered' => 'bordered-layout', 'semi-dark' => 'semi-dark-layout'],
+            'sidebarCollapsed' => [true, false],
+            'showMenu' => [true, false],
+            'layoutWidth' => ['full', 'boxed'],
+            'navbarColor' => ['bg-primary', 'bg-info', 'bg-warning', 'bg-success', 'bg-danger', 'bg-dark'],
+            'horizontalMenuType' => ['floating' => 'navbar-floating', 'static' => 'navbar-static', 'sticky' => 'navbar-sticky'],
+            'horizontalMenuClass' => ['static' => '', 'sticky' => 'fixed-top', 'floating' => 'floating-nav'],
+            'verticalMenuNavbarType' => ['floating' => 'navbar-floating', 'static' => 'navbar-static', 'sticky' => 'navbar-sticky', 'hidden' => 'navbar-hidden'],
+            'navbarClass' => ['floating' => 'floating-nav', 'static' => 'navbar-static-top', 'sticky' => 'fixed-top', 'hidden' => 'd-none'],
+            'footerType' => ['static' => 'footer-static', 'sticky' => 'footer-fixed', 'hidden' => 'footer-hidden'],
+            'pageHeader' => [true, false],
+            'contentLayout' => ['default', 'content-left-sidebar', 'content-right-sidebar', 'content-detached-left-sidebar', 'content-detached-right-sidebar'],
+            'blankPage' => [false, true],
+            'sidebarPositionClass' => ['content-left-sidebar' => 'sidebar-left', 'content-right-sidebar' => 'sidebar-right', 'content-detached-left-sidebar' => 'sidebar-detached sidebar-left', 'content-detached-right-sidebar' => 'sidebar-detached sidebar-right', 'default' => 'default-sidebar-position'],
+            'contentsidebarClass' => ['content-left-sidebar' => 'content-right', 'content-right-sidebar' => 'content-left', 'content-detached-left-sidebar' => 'content-detached content-right', 'content-detached-right-sidebar' => 'content-detached content-left', 'default' => 'default-sidebar'],
+            'defaultLanguage' => ['en' => 'en', 'fr' => 'fr', 'de' => 'de', 'pt' => 'pt'],
+            'direction' => ['ltr', 'rtl'],
         ];
 
         //if mainLayoutType value empty or not match with default options in custom.php config file then set a default value
@@ -120,22 +120,22 @@ final class Helper
             'sidebarPositionClass' => $allOptions['sidebarPositionClass'][$data['contentLayout']],
             'contentsidebarClass' => $allOptions['contentsidebarClass'][$data['contentLayout']],
             'mainLayoutType' => $data['mainLayoutType'],
-            'defaultLanguage'=>$allOptions['defaultLanguage'][$data['defaultLanguage']],
+            'defaultLanguage' => $allOptions['defaultLanguage'][$data['defaultLanguage']],
             'direction' => $data['direction'],
         ];
         // set default language if session hasn't locale value the set default language
-        if(!session()->has('locale')){
+        if (!session()->has('locale')) {
             app()->setLocale($layoutClasses['defaultLanguage']);
         }
 
         // sidebar Collapsed
         if ($layoutClasses['sidebarCollapsed'] == 'true') {
-            $layoutClasses['sidebarClass'] = "menu-collapsed";
+            $layoutClasses['sidebarClass'] = 'menu-collapsed';
         }
 
         // blank page class
         if ($layoutClasses['blankPage'] == 'true') {
-            $layoutClasses['blankPageClass'] = "blank-page";
+            $layoutClasses['blankPageClass'] = 'blank-page';
         }
 
         return $layoutClasses;

@@ -13,7 +13,7 @@ final class ProductController extends Controller
     public function index()
     {
         $pageConfigs = [
-            'contentLayout' => "content-detached-left-sidebar",
+            'contentLayout' => 'content-detached-left-sidebar',
             'pageClass' => '',
         ];
 
