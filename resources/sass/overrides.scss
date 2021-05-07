@@ -1,0 +1,52 @@
+@import './base/bootstrap-extended/include'; // Bootstrap includes
+@import './base/components/include'; // Components includes
+
+// ------------------------------------------------
+// breadcrumb
+// ------------------------------------------------
+// .breadcrumb-item + .breadcrumb-item::before {
+//   float: unset;
+// }
+
+//  Vertical menu
+//=========================
+body.vertical-layout {
+  &.vertical-menu-modern {
+    .horizontal-menu-wrapper {
+      display: none;
+    }
+  }
+}
+
+// Horizontal Menu
+//=========================
+.horizontal-menu {
+  // Hide Vertical menu in Horizontal Layout in Laravel not in HTML
+  > .main-menu {
+    display: none;
+  }
+  .fixed-top {
+    left: 0;
+  }
+}
+
+// content style
+//=========================
+html body.navbar-static .app-content .header-navbar {
+  background: transparent;
+  box-shadow: none !important;
+}
+
+@include media-breakpoint-down(xs) {
+  // Vertical Layout
+  body.vertical-layout {
+    &:not(.horizontal-layout) {
+      &.navbar-floating {
+        .header-navbar {
+          margin-left: 1.2rem;
+          margin-right: 1.2rem;
+        }
+      }
+    }
+  }
+}

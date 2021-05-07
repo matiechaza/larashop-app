@@ -12,8 +12,14 @@ final class ProductController extends Controller
 {
     public function index()
     {
+        $pageConfigs = [
+            'contentLayout' => "content-detached-left-sidebar",
+            'pageClass' => '',
+        ];
+
         return view('products.index', [
             'products' => Product::all(),
+            'pageConfigs' => $pageConfigs,
         ]);
     }
 
